@@ -1,0 +1,35 @@
+---
+title: "Week 5 activity"
+author: "Saiteja"
+date: "2023-06-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r visualization, echo=TRUE}
+cran_mirror <- "https://cloud.r-project.org" 
+
+install.packages("knitr",  repos = cran_mirror)
+
+install.packages("ggplot2", repos = cran_mirror)
+library(ggplot2)
+
+avengers_data_set<- read.csv("C:/Users/Saite/OneDrive/Documents/avengers.csv")
+
+scatter_plot<- ggplot(avengers_data_set, aes(x=Appearances, y=Year))+geom_point()+
+  labs(title= "Appearances vs Year", x="no of Appearances", y="no of Year")
+
+scatter_plot
+
+Bar_chart <- ggplot(avengers_data_set, aes(x = Name, y = Appearances)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  labs(title = "Avengers Data_set", x = "Name", y = "Appearances")
+
+Bar_chart
+
+```
+
+
